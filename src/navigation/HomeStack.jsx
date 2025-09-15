@@ -17,6 +17,11 @@ import SecurityScreen from '../screen/akun/SecurityScreen';
 import AboutScreen from '../screen/akun/AboutScreen';
 import ChatAI from '../screen/feature/ChatAI';
 import PatunganDetail from '../screen/patungan/PatunganDetail';
+import PatunganActiveDetail from '../screen/patungan/PatunganActiveDetail';
+import PatunganList from '../screen/patungan/PatunganList';
+import SedekahScreen from '../screen/feature/Sedekah'; // ✅ ganti
+import KoperasiScreen from '../screen/feature/KoperasiScreen'; // ✅ ganti
+import PPOBScreen from '../screen/feature/PpobScreen'; // ✅ ganti
 import SaldoScreen from '../screen/feature/SaldoScreen'; // ✅ ganti
 
 import { ArrowLeft } from 'lucide-react-native';
@@ -86,6 +91,14 @@ const HomeStack = ({ onDone }) => {
       {/* Screen tambahan */}
       <Stack.Screen name="ChatScreen" component={ChatAI} options={{ title: 'Beres AI' }} />
       <Stack.Screen name="PatunganDetail" component={PatunganDetail} options={{ title: 'Patungan' }} />
+      <Stack.Screen name="PatunganActiveDetail" component={PatunganActiveDetail} options={{ title: 'Patungan' }} />
+      <Stack.Screen name="PatunganList" component={PatunganList} options={{ title: 'Patungan' }} />
+      <Stack.Screen name="SedekahScreen" component={SedekahScreen} options={{ title: 'Sedekah' }} />
+      <Stack.Screen name="KoperasiScreen" component={KoperasiScreen} options={{ title: 'Koperasi' }} />
+      <Stack.Screen name="PPOBScreen" component={PPOBScreen} options={{ title: 'Koperasi' }} />
+      
+      <Stack.Screen name="EdukasiScreen" component={EdukasiScreen} options={{ title: 'Edukasi' }} />
+      
       <Stack.Screen name="SaldoScreen" component={SaldoScreen} options={{ title: 'TopUp' }} />
       <Stack.Screen name="FaqScreen" component={FaqScreen} options={{ title: 'Pertanyaan Umum' }} />
       <Stack.Screen name="SupportScreen" component={SupportScreen} options={{ title: 'Pusat Bantuan' }} />

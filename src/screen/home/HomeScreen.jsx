@@ -111,7 +111,7 @@ function HomeScreen() {
           <CategoryScreen />
           <View>
             <Text style={styles.sectionTitle}>Promo Patungan</Text>
-            {renderContent(patunganData, loadingPatungan, errorPatungan, PatunganScreen, 'PatunganDetail')}
+            {renderContent(patunganData, loadingPatungan, errorPatungan, PatunganScreen, 'PatunganActiveDetail')}
           </View>
           {/* <View style={{ marginTop: 24 }}>
             <Text style={styles.sectionTitle}>Promo Arisan</Text>

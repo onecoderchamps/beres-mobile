@@ -70,7 +70,7 @@ const CategorySelector = () => {
         navigation.navigate('ArisanScreen');
         break;
       case 'Patungan':
-        navigation.navigate('PatunganScreen');
+        navigation.navigate('PatunganList');
         break;
       case 'Koperasi':
         navigation.navigate('KoperasiScreen');
