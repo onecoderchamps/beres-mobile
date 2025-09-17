@@ -5,7 +5,8 @@ import {
   TouchableOpacity,
   StyleSheet,
   ActivityIndicator,
-  Modal
+  Modal,
+  Alert
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { getData } from '../../../api/service';
@@ -13,14 +14,17 @@ import {
   GraduationCap,
   Store,
   Heart,
-  Handshake,
+  Handshake,Gem,Smartphone
 } from 'lucide-react-native';
 
 const categories = [
   { key: 'Edukasi', label: 'Edukasi', icon: GraduationCap },
   { key: 'Patungan', label: 'Patungan', icon: Store },
+  { key: 'Arisan', label: 'Arisan', icon: Gem },
   { key: 'Sedekah', label: 'Sedekah', icon: Heart },
   { key: 'Koperasi', label: 'Koperasi', icon: Handshake },
+  { key: 'PPOB', label: 'PPOB', icon: Smartphone },
+//   { key: 'MyAsset', label: 'AssetKu', icon: PieChart },
 ];
 
 const CategorySelector = () => {
@@ -52,7 +56,7 @@ const CategorySelector = () => {
       return;
     }
 
-    const memberRequiredCategories = ['Patungan', 'Arisan', 'MyAsset', 'Sedekah'];
+    const memberRequiredCategories = ['Patungan', 'MyAsset', 'Sedekah'];
 
     if (memberRequiredCategories.includes(key)) {
       if (!dataProfile?.isMember) {
@@ -81,7 +85,7 @@ const CategorySelector = () => {
         navigation.navigate('EdukasiScreen');
         break;
       default:
-        alert("Fitur Segera Hadir!");
+        Alert.alert("Pengumuman","Fitur Segera Hadir!");
         break;
     }
   };

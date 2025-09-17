@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { getData } from '../../api/service';
 // import EventList from '../../component/EventList';
@@ -15,6 +15,8 @@ function HomeScreen() {
   const navigation = useNavigation();
   const [patunganData, setPatunganData] = useState([]);
   const [arisanData, setArisanData] = useState([]);
+  const [data, setData] = useState([]);
+
   const [loadingPatungan, setLoadingPatungan] = useState(true);
   const [loadingArisan, setLoadingArisan] = useState(true);
   const [errorPatungan, setErrorPatungan] = useState(null);
@@ -72,7 +74,17 @@ function HomeScreen() {
     }
   }, []);
 
+  const getDatabase = async () => {
+    try {
+      const response = await getData('auth/verifySessions');
+      setData(response.data);
+    } catch (error) {
+      alert(error || 'Terjadi kesalahan saat memverifikasi.');
+    }
+  };
+
   useEffect(() => {
+    getDatabase();
     getDatabasePatungan();
     getDatabaseArisan();
     fetchEvents();
@@ -90,7 +102,27 @@ function HomeScreen() {
           (item.sisaSlot === undefined || item.sisaSlot > 0) && (
             <TouchableOpacity
               key={item.id || idx}
-              onPress={() => navigation.navigate(navigatePath, { id: item.id })}
+              onPress={() => {
+                if (data.isPayMonthly === true) {
+                  navigation.navigate(navigatePath, { id: item.id });
+                } else {
+                  Alert.alert(
+                    'Kamu belum membayar iuran bulanan',
+                    'Untuk mengakses fitur ini, silakan membayar terlebih dahulu.',
+                    [
+                      {
+                        text: 'Tidak',
+                        style: 'cancel',
+                      },
+                      {
+                        text: 'Bayar Sekarang',
+                        onPress: () => navigation.navigate('KoperasiScreen'),
+                      },
+                    ],
+                    { cancelable: true }
+                  );
+                }
+              }}
               style={{ marginRight: 12, width: 250 }}
               activeOpacity={0.9}
             >
@@ -107,7 +139,7 @@ function HomeScreen() {
       <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
         <View style={{ padding: 16 }}>
           <HeaderScreen />
-          <MembershipScreen navigation={navigation}/>
+          <MembershipScreen navigation={navigation} />
           <CategoryScreen />
           <View>
             <Text style={styles.sectionTitle}>Promo Patungan</Text>
