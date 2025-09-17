@@ -113,11 +113,6 @@ const OtpVerificationScreen = ({ onDone }) => {
           behavior={Platform.OS === 'ios' ? 'padding' : undefined}
           style={styles.container}
         >
-          {/* Back Button */}
-          <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-            <Ionicons name="arrow-back" size={24} color="#333" />
-            <Text style={styles.backText}>Verifikasi OTP</Text>
-          </TouchableOpacity>
 
           <View style={styles.card}>
             <Feather name="shield" size={64} color="#facc15" style={styles.icon} />
@@ -150,7 +145,7 @@ const OtpVerificationScreen = ({ onDone }) => {
             {/* Timer & Resend */}
             <View style={styles.timerContainer}>
               <View style={styles.timerBox}>
-                <Ionicons name="time-outline" size={16} color="#555" />
+                {/* <Ionicons name="time-outline" size={16} color="#555" /> */}
                 <Text style={styles.timerText}>{formatTime(timer)}</Text>
               </View>
 
@@ -190,7 +185,7 @@ const OtpVerificationScreen = ({ onDone }) => {
             </TouchableOpacity>
           </View>
 
-          <Text style={styles.supportText}>
+          {/* <Text style={styles.supportText}>
             Masalah?{' '}
             <Text
               style={styles.supportLink}
@@ -198,7 +193,7 @@ const OtpVerificationScreen = ({ onDone }) => {
             >
               Hubungi Dukungan
             </Text>
-          </Text>
+          </Text> */}
         </KeyboardAvoidingView>
       </TouchableWithoutFeedback>
     </SafeAreaView>

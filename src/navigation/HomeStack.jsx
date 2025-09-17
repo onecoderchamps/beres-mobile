@@ -23,6 +23,7 @@ import SedekahScreen from '../screen/feature/Sedekah'; // ✅ ganti
 import KoperasiScreen from '../screen/feature/KoperasiScreen'; // ✅ ganti
 import PPOBScreen from '../screen/feature/PpobScreen'; // ✅ ganti
 import SaldoScreen from '../screen/feature/SaldoScreen'; // ✅ ganti
+import RegisterScreen from '../screen/feature/RegisterScreen'; // ✅ ganti
 
 import { ArrowLeft } from 'lucide-react-native';
 import { TouchableOpacity } from 'react-native';
@@ -96,6 +97,7 @@ const HomeStack = ({ onDone }) => {
       <Stack.Screen name="SedekahScreen" component={SedekahScreen} options={{ title: 'Sedekah' }} />
       <Stack.Screen name="KoperasiScreen" component={KoperasiScreen} options={{ title: 'Koperasi' }} />
       <Stack.Screen name="PPOBScreen" component={PPOBScreen} options={{ title: 'Koperasi' }} />
+      <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{ title: 'Koperasi' }} />
       
       <Stack.Screen name="EdukasiScreen" component={EdukasiScreen} options={{ title: 'Edukasi' }} />
       
