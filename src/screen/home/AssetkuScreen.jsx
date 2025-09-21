@@ -54,7 +54,7 @@ const AktifitasScreen = () => {
   }, []);
 
   const combinedData = [
-    ...arisanData.map((item) => ({ ...item, type: 'Arisan' })),
+    // ...arisanData.map((item) => ({ ...item, type: 'Arisan' })),
     ...patunganData.map((item) => ({ ...item, type: 'Patungan' })),
   ];
 

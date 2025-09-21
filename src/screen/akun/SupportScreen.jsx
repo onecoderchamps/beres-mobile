@@ -22,7 +22,7 @@ const helpData = [
     category: 'Keamanan',
     faqs: [
       { q: 'Apakah data saya aman?', a: 'Ya, kami menggunakan enkripsi dan standar keamanan terbaik untuk melindungi data Anda.' },
-      { q: 'Bagaimana jika akun saya diretas?', a: 'Segera ubah password dan hubungi tim support melalui email bantuan resmi.' },
+      { q: 'Bagaimana jika akun saya diretas?', a: 'Hubungi tim support melalui email bantuan resmi.' },
     ],
   },
 ];

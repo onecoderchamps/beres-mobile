@@ -15,7 +15,7 @@ function HomeScreen() {
   const navigation = useNavigation();
   const [patunganData, setPatunganData] = useState([]);
   const [arisanData, setArisanData] = useState([]);
-  const [data, setData] = useState([]);
+  const [datas, setData] = useState([]);
 
   const [loadingPatungan, setLoadingPatungan] = useState(true);
   const [loadingArisan, setLoadingArisan] = useState(true);
@@ -79,7 +79,7 @@ function HomeScreen() {
       const response = await getData('auth/verifySessions');
       setData(response.data);
     } catch (error) {
-      alert(error || 'Terjadi kesalahan saat memverifikasi.');
+      Alert.alert(error || 'Terjadi kesalahan saat memverifikasi.');
     }
   };
 
@@ -103,7 +103,7 @@ function HomeScreen() {
             <TouchableOpacity
               key={item.id || idx}
               onPress={() => {
-                if (data.isPayMonthly === true) {
+                if (datas.isPayMonthly === true) {
                   navigation.navigate(navigatePath, { id: item.id });
                 } else {
                   Alert.alert(

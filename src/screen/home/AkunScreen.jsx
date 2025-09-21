@@ -64,7 +64,7 @@ const AkunPage = ({ navigation, onDone }) => {
 
   const menuItems = [
     { label: 'Pertanyaan Umum', icon: Home, path: 'FaqScreen' },
-    { label: 'Pusat Bantuan', icon: LifeBuoy, path: 'SupportScreen' },
+    // { label: 'Pusat Bantuan', icon: LifeBuoy, path: 'SupportScreen' },
     { label: 'Keamanan Akun', icon: Shield, path: 'SecurityScreen' },
     { label: 'Tentang Aplikasi', icon: Info, path: 'AboutScreen' },
   ];

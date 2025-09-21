@@ -9,6 +9,7 @@ import {
     TextInput,
     ScrollView,
     StyleSheet,
+    Alert,
 } from "react-native";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import { getData, postData } from "../../api/service";
@@ -77,8 +78,8 @@ const PatunganDetail = ({ route, navigation }) => {
             setModalVisible(false);
             setJumlahLot(1);
         } catch (err) {
+            Alert.alert("Pemberitahuan",err);
             console.log("Error join:", err);
-            alert("Gagal membeli asset");
         }
     };
 

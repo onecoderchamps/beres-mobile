@@ -1,8 +1,10 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import RNRestart from 'react-native-restart';
 
 // Base URL API
 const API_URL = 'https://apiberes.coderchamps.co.id/api/v1/';
+// const API_URL = 'http://localhost:5000/api/v1/'; // Ganti dengan URL lokal Anda
 
 const api = axios.create({
   baseURL: API_URL,
@@ -43,7 +45,7 @@ api.interceptors.request.use(
 // Interceptor response: Tangani error secara global
 api.interceptors.response.use(
   (response) => response,
-  (error) => {
+  async (error) => {
     if (error.response) {
       const { status, data } = error.response;
       console.error(`Error Response [${status}]:`, data);
@@ -54,6 +56,8 @@ api.interceptors.response.use(
           return Promise.reject(data?.errorMessage?.Error);
         case 401:
           console.error('🔒 [401] Unauthorized: Token tidak valid atau kadaluarsa');
+          const token = await AsyncStorage.removeItem('accessTokens');
+          RNRestart.restart();
           // Aksi tambahan untuk 401: misal, navigasi ke layar login
           break;
         case 403:

@@ -69,7 +69,7 @@ const PatunganScreen = () => {
       <TouchableOpacity
         activeOpacity={0.8}
         onPress={() =>
-          navigation.navigate("PatunganDetail", { id: item.id })
+          navigation.navigate("PatunganActiveDetail", { id: item.id })
         }
         style={[styles.card, { width: cardWidth }]}
       >

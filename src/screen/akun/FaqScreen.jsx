@@ -6,21 +6,50 @@ import { ChevronDown, ChevronUp } from 'lucide-react-native';
 const faqData = [
   {
     question: 'Bagaimana cara mendaftar akun?',
-    answer: 'Anda dapat mendaftar dengan mengisi form registrasi menggunakan email atau nomor HP, lalu verifikasi kode OTP.',
+    answer: 'Cukup masukkan nomor ponsel Anda. Sistem akan otomatis mengenali apakah nomor tersebut perlu mendaftar atau sudah terdaftar. Verifikasi dilakukan melalui kode OTP WhatsApp.',
   },
   {
     question: 'Apakah data saya aman?',
     answer: 'Kami menggunakan enkripsi dan standar keamanan tinggi untuk melindungi data pribadi Anda.',
   },
   {
-    question: 'Bagaimana cara mengubah password?',
-    answer: 'Masuk ke menu Akun > Keamanan Akun > Ubah Password, lalu ikuti langkah yang tersedia.',
+    question: 'Apakah aplikasi ini gratis?',
+    answer: 'Ya, aplikasi ini gratis digunakan. Namun, beberapa fitur hanya bisa diakses jika Anda terdaftar sebagai anggota koperasi.',
   },
   {
-    question: 'Apakah aplikasi ini gratis?',
-    answer: 'Ya, aplikasi ini dapat digunakan secara gratis. Namun beberapa fitur premium mungkin berbayar.',
+    question: 'Bagaimana cara top up saldo?',
+    answer: 'Klik tombol "Top Up", masukkan jumlah yang ingin ditambahkan, lalu unggah bukti pembayaran. Sistem akan otomatis mengenali bukti tersebut.',
+  },
+  {
+    question: 'Bagaimana cara melihat transaksi saya sebelumnya?',
+    answer: 'Buka menu "Top Up". Di sana akan tampil daftar riwayat transaksi Anda.',
+  },
+  {
+    question: 'Bagaimana cara update saldo?',
+    answer: 'Jika saldo tidak otomatis ter-update, cukup klik tampilan saldo Anda. Sistem akan memuat ulang saldo secara otomatis.',
+  },
+  {
+    question: 'Bagaimana membeli aset patungan?',
+    answer: 'Klik tombol "Patungan" atau "Promo Patungan". Anda bisa melihat detail aset legal, syarat & ketentuan, serta daftar peserta.',
+  },
+  {
+    question: 'Bagaimana cara melihat aset yang sudah dibeli?',
+    answer: 'Masuk ke menu "Asetku". Semua aset yang sudah Anda beli akan tampil di sana, termasuk daftar pesertanya.',
+  },
+  {
+    question: 'Bagaimana membeli aset arisan emas?',
+    answer: 'Klik tombol "Arisan" atau "Promo Arisan". Anda bisa melihat detail aset legal, syarat & ketentuan, serta daftar peserta.',
+  },
+  {
+    question: 'Bagaimana membayar iuran tahunan koperasi?',
+    answer: 'Jika iuran tahunan belum dibayar, beberapa menu akan otomatis tertutup. Silakan klik tombol "Daftar Ulang". Saldo Anda akan terpotong sesuai jumlah iuran koperasi.',
+  },
+  {
+    question: 'Bagaimana membayar iuran bulanan koperasi?',
+    answer: 'Buka menu "Koperasi". Tersedia tombol khusus untuk membayar iuran bulanan, saldo Anda akan otomatis terpotong sesuai jumlah iuran.',
   },
 ];
+
 
 const FaqScreen = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -30,7 +59,7 @@ const FaqScreen = () => {
   };
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: '#fff', padding: 16 }}>
+    <ScrollView style={{ flex: 1, backgroundColor: '#fff', padding: 20 }}>
 
       {faqData.map((item, index) => {
         const isOpen = activeIndex === index;
