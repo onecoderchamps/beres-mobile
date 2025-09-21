@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 	<string>BERES</string>
 	<key>CFBundleExecutable</key>
@@ -32,7 +32,15 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>Aplikasi memerlukan akses lokasi saat digunakan untuk mendukung fitur tertentu.</string>
+
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Aplikasi memerlukan akses lokasi bahkan di latar belakang untuk memastikan layanan berjalan optimal.</string>
+
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Aplikasi memerlukan akses ke galeri foto agar pengguna dapat mengunggah gambar atau bukti transaksi.</string>
+
+
 	<key>RCTNewArchEnabled</key>
 	<true/>
 	<key>UIAppFonts</key>
