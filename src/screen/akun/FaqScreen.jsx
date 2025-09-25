@@ -48,6 +48,10 @@ const faqData = [
     question: 'Bagaimana membayar iuran bulanan koperasi?',
     answer: 'Buka menu "Koperasi". Tersedia tombol khusus untuk membayar iuran bulanan, saldo Anda akan otomatis terpotong sesuai jumlah iuran.',
   },
+  {
+    question: 'Bagaimana saya menghapus akun?',
+    answer: 'Kamu tinggal masuk ke menu "Akun", lalu pilih "Hapus Akun". Semua data termasuk saldo, riwayat transaksi, asset properti, dan akun yang sudah pernah dicantumkan di aplikasi akan ikut terhapus.',
+  },
 ];
 
 

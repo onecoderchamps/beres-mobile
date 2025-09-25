@@ -17,9 +17,10 @@ import {
   Info, 
   ChevronRight, 
   LogOut, 
-  User 
-} from 'lucide-react-native'; // ✅ ganti ke lucide
-import { getData } from '../../api/service';
+  User, 
+  Trash2
+} from 'lucide-react-native'; // ✅ tambah ikon hapus
+import { getData, deleteData } from '../../api/service';
 
 const AkunPage = ({ navigation, onDone }) => {
   const [userData, setUserData] = useState({});
@@ -62,9 +63,32 @@ const AkunPage = ({ navigation, onDone }) => {
     );
   };
 
+  const handleDeleteAccount = () => {
+    Alert.alert(
+      'Hapus Akun',
+      'Jika Anda menghapus akun, semua data termasuk saldo, riwayat transaksi, dan akun yang sudah pernah dicantumkan di aplikasi akan ikut terhapus. Apakah Anda yakin ingin melanjutkan?',
+      [
+        { text: 'Batal', style: 'cancel' },
+        { 
+          text: 'Ya, Hapus',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              await deleteData('auth/deleteAccount'); // ✅ API hapus akun
+              await AsyncStorage.removeItem('accessTokens');
+              onDone(); // arahkan kembali ke login / landing
+            } catch (error) {
+              console.error("Error saat hapus akun:", error);
+              Alert.alert('Gagal', 'Terjadi kesalahan saat menghapus akun. Coba lagi.');
+            }
+          }
+        }
+      ]
+    );
+  };
+
   const menuItems = [
     { label: 'Pertanyaan Umum', icon: Home, path: 'FaqScreen' },
-    // { label: 'Pusat Bantuan', icon: LifeBuoy, path: 'SupportScreen' },
     { label: 'Keamanan Akun', icon: Shield, path: 'SecurityScreen' },
     { label: 'Tentang Aplikasi', icon: Info, path: 'AboutScreen' },
   ];
@@ -154,11 +178,28 @@ const AkunPage = ({ navigation, onDone }) => {
               alignItems: 'center',
               flexDirection: 'row',
               justifyContent: 'center',
-              marginBottom: 16
+              marginBottom: 12
             }}
           >
             <LogOut size={22} color="#fff" style={{ marginRight: 8 }} />
             <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 16 }}>Keluar Akun</Text>
+          </TouchableOpacity>
+
+          {/* DELETE ACCOUNT */}
+          <TouchableOpacity
+            onPress={handleDeleteAccount}
+            style={{
+              backgroundColor: '#6b7280', // abu-abu gelap
+              paddingVertical: 16,
+              borderRadius: 12,
+              alignItems: 'center',
+              flexDirection: 'row',
+              justifyContent: 'center',
+              marginBottom: 16
+            }}
+          >
+            <Trash2 size={22} color="#fff" style={{ marginRight: 8 }} />
+            <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 16 }}>Hapus Akun</Text>
           </TouchableOpacity>
 
           {/* VERSION */}

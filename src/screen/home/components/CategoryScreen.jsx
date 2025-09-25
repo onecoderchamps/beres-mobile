@@ -20,10 +20,10 @@ import {
 const categories = [
   { key: 'Edukasi', label: 'Edukasi', icon: GraduationCap },
   { key: 'Patungan', label: 'Patungan', icon: Store },
-  { key: 'Arisan', label: 'Arisan', icon: Gem },
+  // { key: 'Arisan', label: 'Arisan', icon: Gem },
   { key: 'Sedekah', label: 'Sedekah', icon: Heart },
   { key: 'Koperasi', label: 'Koperasi', icon: Handshake },
-  { key: 'PPOB', label: 'PPOB', icon: Smartphone },
+  // { key: 'PPOB', label: 'PPOB', icon: Smartphone },
 //   { key: 'MyAsset', label: 'AssetKu', icon: PieChart },
 ];
 
