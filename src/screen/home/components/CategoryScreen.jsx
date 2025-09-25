@@ -118,12 +118,6 @@ const CategorySelector = () => {
         <TouchableOpacity style={styles.blockBtn} onPress={handleRegisterNow}>
           <Text style={styles.blockBtnText}>Daftar Sekarang</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.blockBtnSecondary}
-          onPress={() => navigation.goBack()}
-        >
-          <Text style={styles.blockBtnSecondaryText}>Kembali</Text>
-        </TouchableOpacity>
       </View>
     );
   }

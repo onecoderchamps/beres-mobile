@@ -3,8 +3,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import RNRestart from 'react-native-restart';
 
 // Base URL API
-// const API_URL = 'https://apiberes.coderchamps.co.id/api/v1/';
-const API_URL = 'http://localhost:5000/api/v1/'; // Ganti dengan URL lokal Anda
+const API_URL = 'https://apiberes.coderchamps.co.id/api/v1/';
+// const API_URL = 'http://localhost:5000/api/v1/'; // Ganti dengan URL lokal Anda
 
 const api = axios.create({
   baseURL: API_URL,
