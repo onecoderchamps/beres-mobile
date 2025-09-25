@@ -65,8 +65,8 @@ const AkunPage = ({ navigation, onDone }) => {
 
   const handleDeleteAccount = () => {
     Alert.alert(
-      'Hapus Akun',
-      'Jika Anda menghapus akun, semua data termasuk saldo, riwayat transaksi, dan akun yang sudah pernah dicantumkan di aplikasi akan ikut terhapus. Apakah Anda yakin ingin melanjutkan?',
+      'Apakah Anda yakin ingin menghapus akun Anda?',
+      'Akun dan data pribadi Anda akan dihapus secara permanen. Riwayat transaksi tetap tersimpan untuk keperluan hukum, namun tidak lagi terhubung dengan identitas Anda. Apakah Anda yakin ingin melanjutkan?',
       [
         { text: 'Batal', style: 'cancel' },
         { 

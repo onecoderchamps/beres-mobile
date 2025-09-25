@@ -50,7 +50,7 @@ const faqData = [
   },
   {
     question: 'Bagaimana saya menghapus akun?',
-    answer: 'Kamu tinggal masuk ke menu "Akun", lalu pilih "Hapus Akun". Semua data termasuk saldo, riwayat transaksi, asset properti, dan akun yang sudah pernah dicantumkan di aplikasi akan ikut terhapus.',
+    answer: 'Kamu tinggal masuk ke menu "Akun", lalu pilih "Hapus Akun". Semua data termasuk saldo, riwayat transaksi, asset properti, dan akun yang sudah pernah dicantumkan di aplikasi akan terlepas dari akun anda.',
   },
 ];
 
